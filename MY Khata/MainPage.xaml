@@ -3,40 +3,67 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MY_Khata.MainPage">
 
-    <ScrollView>
+    <VerticalStackLayout
+        
+        >
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+            BackgroundColor="{StaticResource Primary}"
+            Padding="10,20"
+            >
+        <Frame
+            Margin="10"
+            >
+            <VerticalStackLayout
+                HorizontalOptions="Center"
+                >
+                <Label Text="Balance"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"
+                       />
+                <Label Text="56234"
+                       TextColor="Green"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       />
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+                   <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                Margin="0,10,0,0"
+                                >
+                    <VerticalStackLayout
+                        
+                       HorizontalOptions="FillAndExpand"
+                        >
+                        <Label Text="You will give"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"
+                       />
+                        <Label Text="5000" TextColor="Red" HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand" FontSize="Large" />
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+        
+        <BoxView Color="#ccc" WidthRequest="1" />
+                            <VerticalStackLayout
+                        
+                       HorizontalOptions="FillAndExpand"
+                        >
+                        <Label Text="You will get"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"
+                       />
+                        <Label Text="5000" TextColor="Green" HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand" FontSize="Large" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+    </StackLayout>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            </VerticalStackLayout>
 
-        </VerticalStackLayout>
-    </ScrollView>
+        </Frame>
+            </VerticalStackLayout>
+
+
+    </VerticalStackLayout>
 
 </ContentPage>
 
