@@ -7,11 +7,12 @@
         
         >
         <VerticalStackLayout
-            BackgroundColor="{StaticResource Primary}"
             Padding="10,20"
             >
         <Frame
             Margin="10"
+            HasShadow="True"
+            BackgroundColor="White"
             >
             <VerticalStackLayout
                 HorizontalOptions="Center"
@@ -20,9 +21,12 @@
                        TextColor="Gray"
                        HorizontalTextAlignment="Center"
                        />
-                <Label Text="56234"
+                    <Label 
+                        x:Name="Balance"
+                        Text="₹"
                        TextColor="Green"
                        FontSize="Large"
+                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        />
 
@@ -37,7 +41,7 @@
                        TextColor="Gray"
                        HorizontalTextAlignment="Center"
                        />
-                        <Label Text="5000" TextColor="Red" HorizontalTextAlignment="Center"
+                            <Label  x:Name="togive" Text="₹" TextColor="Red" HorizontalTextAlignment="Center"
                HorizontalOptions="FillAndExpand" FontSize="Large" />
 
                     </VerticalStackLayout>
@@ -51,7 +55,7 @@
                        TextColor="Gray"
                        HorizontalTextAlignment="Center"
                        />
-                        <Label Text="5000" TextColor="Green" HorizontalTextAlignment="Center"
+                            <Label  x:Name="totake" Text="₹" TextColor="Green" HorizontalTextAlignment="Center"
                HorizontalOptions="FillAndExpand" FontSize="Large" />
 
                     </VerticalStackLayout>
@@ -61,6 +65,15 @@
 
         </Frame>
             </VerticalStackLayout>
+
+
+        <ListView x:Name="myListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
 
     </VerticalStackLayout>
