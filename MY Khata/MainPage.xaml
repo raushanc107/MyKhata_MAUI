@@ -2,17 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MY_Khata.MainPage">
+    <Grid>
 
+
+  
     <VerticalStackLayout
-        
+        HorizontalOptions="FillAndExpand"
         >
         <VerticalStackLayout
             Padding="10,20"
+            BackgroundColor="{StaticResource Primary}"
+
             >
         <Frame
             Margin="10"
             HasShadow="True"
-            BackgroundColor="White"
+            
             >
             <VerticalStackLayout
                 HorizontalOptions="Center"
@@ -67,16 +72,71 @@
             </VerticalStackLayout>
 
 
-        <ListView x:Name="myListView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+<ListView x:Name="itemListView"
+                  ItemsSource="{Binding User}"
+                  SelectionMode="None"
+                  HasUnevenRows="True"
+                  
+                  >
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <StackLayout
+                                
+                                Orientation="Horizontal"
+                                VerticalOptions="Center"
+                                HorizontalOptions="FillAndExpand"
+                                Padding="0"
+                                >
+                <Frame BackgroundColor="LightBlue"
+                       Padding="10"
+                       CornerRadius="30"
+                       Margin="20"
+                       VerticalOptions="Center"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       >
+                    <Label Text="{Binding logo}"
+                           FontSize="24"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Frame>
+                <Label Text="{Binding Name}"  VerticalTextAlignment="Center" FontSize="Medium"
+                       HorizontalOptions="FillAndExpand"
+                       Margin="10,0"
+                       />
+                <Label Text="{Binding absamount}"
+                       VerticalTextAlignment="Center"
+                       FontSize="Medium"
+                       HorizontalOptions="End"
+                       Padding="30,0"
+                       TextColor="{Binding amountColor}"
+                  />
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
         </ListView>
+
+
 
 
     </VerticalStackLayout>
 
+        <Button
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            ImageSource="addiconpng.png"
+            CornerRadius="35"
+            HeightRequest="70"
+            WidthRequest="70"
+            BackgroundColor="{StaticResource Primary}"
+            Padding="20"
+            Margin="0,0,30,40"
+            Clicked="Adduserbtnclicked"
+            />
+
+      </Grid>
 </ContentPage>
 

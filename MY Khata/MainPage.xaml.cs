@@ -24,12 +24,19 @@ public partial class MainPage : ContentPage
 		m.users.Add(new User() { Name="saurabh",Balance=30000});
 
 		Balance.Text= "₹" + m.Balance.ToString();
-		togive.Text= "₹" + m.toGive.ToString();
+		togive.Text= "₹" + Math.Abs(m.toGive).ToString();
 		totake.Text= "₹" + m.toTake.ToString();
+
+		itemListView.ItemsSource = m.users;
+
 
     }
 
-	
+    void Adduserbtnclicked(System.Object sender, System.EventArgs e)
+    {
+
+    }
+
 }
 
 

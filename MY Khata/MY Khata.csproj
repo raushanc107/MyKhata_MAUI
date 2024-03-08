@@ -51,4 +51,13 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\addBtn.svg" />
+	  <None Remove="Resources\Images\addicon.svg" />
+	  <None Remove="Resources\Images\addiconpng.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\addicon.svg" />
+	  <BundleResource Include="Resources\Images\addiconpng.png" />
+	</ItemGroup>
 </Project>
