@@ -5,8 +5,11 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
-
-		MainPage = new MainPage();
+		var navp = new NavigationPage(new MainPage());
+		navp.BackgroundColor = Colors.Green;
+		navp.BarTextColor = Colors.White;
+		navp.Title = "My Khata";
+		MainPage = navp;
 	}
 }
 

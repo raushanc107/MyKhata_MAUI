@@ -23,7 +23,18 @@ namespace MY_Khata.Models
                 return Colors.Red;
             } }
 
-        public double Balance { get; set; }
+        public double Balance { get {
+                return transactions.Sum(e => e.Balance);
+
+            } }
+
+
+        public List<userTransaction> transactions;
+
+        public User()
+        {
+            transactions = new List<userTransaction>();
+        }
 
 
 

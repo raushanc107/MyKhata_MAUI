@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MY_Khata.MainPage"
-             Title="MY Khata"
-             >
-             
-    <Grid>
-
-
-  
+             x:Class="MY_Khata.detailpage"
+             x:Name="detailpagecontent"
+             Title="detailpage">
     <StackLayout
         HorizontalOptions="FillAndExpand"
         Orientation="Vertical"
@@ -25,45 +20,27 @@
             <VerticalStackLayout
                 HorizontalOptions="Center"
                 >
-                <Label Text="Balance"
-                       TextColor="Gray"
-                       HorizontalTextAlignment="Center"
-                       />
-                    <Label 
-                        x:Name="Balance"
-                        Text="₹"
-                       TextColor="Green"
-                       FontSize="Large"
-                        FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       />
-
                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-                                Margin="0,10,0,0"
+                                
                                 >
                     <VerticalStackLayout
                         
                        HorizontalOptions="FillAndExpand"
                         >
-                        <Label Text="You will give"
-                       TextColor="Gray"
+                        <Label x:Name="toGiveText"
+                       TextColor="DarkGray"
                        HorizontalTextAlignment="Center"
+                       FontSize="Large"
+
                        />
-                            <Label  x:Name="togive" Text="₹" TextColor="Red" HorizontalTextAlignment="Center"
-               HorizontalOptions="FillAndExpand" FontSize="Large" />
 
                     </VerticalStackLayout>
         
-        <BoxView Color="#ccc" WidthRequest="1" />
                             <VerticalStackLayout
                         
                        HorizontalOptions="FillAndExpand"
                         >
-                        <Label Text="You will get"
-                       TextColor="Gray"
-                       HorizontalTextAlignment="Center"
-                       />
-                            <Label  x:Name="totake" Text="₹" TextColor="Green" HorizontalTextAlignment="Center"
+                            <Label  x:Name="totake" Text="₹" HorizontalTextAlignment="Center"
                HorizontalOptions="FillAndExpand" FontSize="Large" />
 
                     </VerticalStackLayout>
@@ -76,10 +53,9 @@
 
 
 <ListView x:Name="itemListView"
-                  ItemsSource="{Binding User}"
-                  ItemTapped="itemListView_ItemTapped"
+                  ItemsSource="{Binding userTransaction}"
                   HasUnevenRows="True"
-                  ItemSelected="itemListView_ItemSelected"
+                  HorizontalOptions="FillAndExpand"
                   >
     <ListView.ItemTemplate>
         <DataTemplate>
@@ -91,21 +67,23 @@
                                 HorizontalOptions="FillAndExpand"
                                 Padding="0"
                                 >
-                <Frame BackgroundColor="LightBlue"
+                <Frame 
                        Padding="10"
-                       CornerRadius="30"
-                       Margin="20"
+                       CornerRadius="0"
                        VerticalOptions="Center"
-                       HeightRequest="60"
-                       WidthRequest="60"
+                       HeightRequest="70"
+                       WidthRequest="70"
+                       BackgroundColor="{StaticResource Primary}"
                        >
-                    <Label Text="{Binding logo}"
-                           FontSize="24"
+                    <Label Text="{Binding dateFormat}"
+                           Padding="0"
+                           FontSize="15"
                            TextColor="White"
                            HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
                            VerticalOptions="Center"/>
                 </Frame>
-                <Label Text="{Binding Name}"  VerticalTextAlignment="Center" FontSize="Medium"
+                <Label Text="{Binding details}"  VerticalTextAlignment="Center" FontSize="Medium"
                        HorizontalOptions="FillAndExpand"
                        Margin="10,0"
                        />
@@ -123,23 +101,31 @@
         </ListView>
 
 
+        <StackLayout
+            Orientation="Horizontal"
+            Padding="30"
+            HorizontalOptions="End"
+            >
 
+            <Button
+                BackgroundColor="Red"
+                Text="You Took"
+                HorizontalOptions="FillAndExpand"
+                Margin="20,30"
+                TextColor="White"
+                Clicked="Button_Clicked_took"
+                />
+
+            <Button
+                BackgroundColor="Green"
+                Text="You Gave"
+                HorizontalOptions="FillAndExpand"
+                Margin="20,30"
+                TextColor="White"
+
+                />
+
+        </StackLayout>
 
     </StackLayout>
-
-        <Button
-            HorizontalOptions="End"
-            VerticalOptions="End"
-            ImageSource="addiconpng.png"
-            CornerRadius="35"
-            HeightRequest="70"
-            WidthRequest="70"
-            BackgroundColor="{StaticResource Primary}"
-            Padding="20"
-            Margin="0,0,30,40"
-            Clicked="Adduserbtnclicked"
-            />
-
-      </Grid>
 </ContentPage>
-
